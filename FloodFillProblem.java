@@ -5,16 +5,16 @@ public class FloodFillProblem {
 	public static void main(String[] args) {
 		
 		int arr[][] = {{1, 1, 1, 1, 1, 1, 1, 1},
-            {1, 1, 1, 1, 1, 1, 0, 0},
-            {1, 0, 0, 1, 1, 0, 1, 1},
-            {1, 2, 2, 2, 2, 0, 1, 0},
-            {1, 1, 1, 2, 2, 0, 1, 0},
-            {1, 1, 1, 2, 2, 2, 2, 0},
-            {1, 1, 1, 1, 1, 2, 1, 1},
-            {1, 1, 1, 1, 1, 2, 2, 1},
+					   {1, 1, 1, 1, 1, 1, 0, 0},
+			            {1, 0, 0, 1, 1, 0, 1, 1},
+			            {1, 2, 2, 2, 2, 0, 1, 0},
+			            {1, 1, 1, 2, 2, 0, 1, 0},
+			            {1, 1, 1, 2, 2, 2, 2, 0},
+			            {1, 1, 1, 1, 1, 2, 1, 1},
+			            {1, 1, 1, 1, 1, 2, 2, 1},
             };
 		
-		FloodFill(arr, 0, 0, 69, 1);
+		FloodFill(arr, 0, 0, 9, 1);
 		printMatrix(arr);
 	}
 	
@@ -23,13 +23,9 @@ public class FloodFillProblem {
 		int rows = arr.length;
 		int cols = arr[0].length;
 		
-		if(r < 0 || r >= rows || c < 0 || c >= cols) {
-			return;
-		}
+		if(r < 0 || r >= rows || c < 0 || c >= cols) return;
 		
-		if(arr[r][c] != prevFill){
-			return;
-		}
+		if(arr[r][c] != prevFill) return;
 		
 		arr[r][c] = toFill;
 		
@@ -40,13 +36,12 @@ public class FloodFillProblem {
 	}
 	
 	static void printMatrix(int arr[][]) {
-		
 		for(int i = 0; i < arr.length; i++) {
 			for(int j = 0; j < arr[i].length; j++) {
 				System.out.print(arr[i][j] + " ");
 			}
-			
 			System.out.println();
 		}
 	}
+	
 }
